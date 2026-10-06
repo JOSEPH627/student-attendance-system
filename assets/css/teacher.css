@@ -1,0 +1,3025 @@
+/* =========================================================
+   TEACHER PORTAL UI
+   Student Attendance System
+   ---------------------------------------------------------
+   IMPORTANT:
+   Teacher-specific styles only.
+   Admin CSS is NOT modified.
+   ========================================================= */
+
+
+/* =========================================================
+   1. TEACHER VARIABLES
+   ========================================================= */
+
+.teacher-page {
+    --teacher-primary: #166534;
+    --teacher-primary-dark: #14532d;
+    --teacher-primary-light: #22c55e;
+    --teacher-primary-soft: #f0fdf4;
+
+    --teacher-blue: #2563eb;
+    --teacher-blue-soft: #eff6ff;
+
+    --teacher-orange: #ea580c;
+    --teacher-orange-soft: #fff7ed;
+
+    --teacher-purple: #7c3aed;
+    --teacher-purple-soft: #f5f3ff;
+
+    --teacher-red: #dc2626;
+    --teacher-red-soft: #fef2f2;
+
+    --teacher-yellow: #ca8a04;
+    --teacher-yellow-soft: #fefce8;
+
+    --teacher-text: #172033;
+    --teacher-text-light: #475569;
+    --teacher-text-muted: #64748b;
+
+    --teacher-border: #e2e8f0;
+    --teacher-border-light: #f1f5f9;
+
+    --teacher-bg: #f8fafc;
+    --teacher-white: #ffffff;
+
+    --teacher-radius-sm: 8px;
+    --teacher-radius-md: 12px;
+    --teacher-radius-lg: 16px;
+    --teacher-radius-xl: 20px;
+
+    --teacher-shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+    --teacher-shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+    --teacher-shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.10);
+}
+
+
+/* =========================================================
+   2. MAIN TEACHER PAGE
+   ========================================================= */
+
+.teacher-page {
+    color: var(--teacher-text);
+}
+
+.teacher-dashboard {
+    background: var(--teacher-bg);
+}
+
+
+/* =========================================================
+   3. PAGE HEADER
+   ========================================================= */
+
+.teacher-dashboard .dashboard-page-header {
+    margin-bottom: 24px;
+}
+
+.teacher-dashboard .dashboard-page-header h1 {
+    color: var(--teacher-text);
+    font-size: 30px;
+    font-weight: 750;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.teacher-dashboard .dashboard-page-header p {
+    color: var(--teacher-text-muted);
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+.teacher-page-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--teacher-primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   4. TEACHER WELCOME CARD
+   ========================================================= */
+
+.teacher-dashboard .teacher-welcome {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #14532d 0%,
+            #166534 55%,
+            #15803d 100%
+        );
+
+    border-radius: var(--teacher-radius-xl);
+    padding: 28px 30px;
+    margin-bottom: 26px;
+
+    color: #ffffff;
+    box-shadow: 0 14px 34px rgba(22, 101, 52, 0.18);
+}
+
+.teacher-dashboard .teacher-welcome::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    right: -70px;
+    top: -100px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.teacher-dashboard .teacher-welcome::after {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    right: 100px;
+    bottom: -110px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.teacher-dashboard .teacher-welcome > * {
+    position: relative;
+    z-index: 1;
+}
+
+.teacher-dashboard .teacher-welcome h2 {
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 750;
+}
+
+.teacher-dashboard .teacher-welcome p {
+    margin: 0;
+    max-width: 700px;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.teacher-dashboard .teacher-welcome small {
+    display: block;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.70);
+}
+
+
+/* =========================================================
+   5. TEACHER HEADER PROFILE
+   ========================================================= */
+
+.teacher-header-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.teacher-header-avatar {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--teacher-primary-soft);
+    color: var(--teacher-primary);
+
+    font-size: 14px;
+    font-weight: 800;
+
+    border: 1px solid #dcfce7;
+}
+
+
+/* =========================================================
+   6. DASHBOARD STATISTICS
+   ========================================================= */
+
+.teacher-dashboard .dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.teacher-dashboard .stat-card {
+    position: relative;
+
+    background: var(--teacher-white);
+    border: 1px solid var(--teacher-border);
+    border-radius: var(--teacher-radius-lg);
+
+    padding: 21px;
+
+    box-shadow: var(--teacher-shadow-sm);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.teacher-dashboard .stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--teacher-shadow-md);
+    border-color: #cbd5e1;
+}
+
+.teacher-dashboard .stat-card h3 {
+    margin: 0;
+
+    color: var(--teacher-text);
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.teacher-dashboard .stat-card p {
+    margin: 7px 0 0;
+
+    color: var(--teacher-text-muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.teacher-dashboard .stat-card-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 16px;
+
+    border-radius: 12px;
+}
+
+.teacher-stat-icon-green {
+    background: var(--teacher-primary-soft);
+    color: var(--teacher-primary);
+}
+
+.teacher-stat-icon-blue {
+    background: var(--teacher-blue-soft);
+    color: var(--teacher-blue);
+}
+
+.teacher-stat-icon-orange {
+    background: var(--teacher-orange-soft);
+    color: var(--teacher-orange);
+}
+
+.teacher-stat-icon-purple {
+    background: var(--teacher-purple-soft);
+    color: var(--teacher-purple);
+}
+
+
+/* =========================================================
+   7. GENERIC TEACHER CARD
+   ========================================================= */
+
+.teacher-dashboard .dashboard-card {
+    background: var(--teacher-white);
+    border: 1px solid var(--teacher-border);
+    border-radius: var(--teacher-radius-lg);
+    box-shadow: var(--teacher-shadow-sm);
+    overflow: hidden;
+}
+
+.teacher-dashboard .dashboard-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 20px 22px;
+
+    border-bottom: 1px solid var(--teacher-border-light);
+}
+
+.teacher-dashboard .dashboard-card-header h2 {
+    margin: 0;
+
+    color: var(--teacher-text);
+    font-size: 17px;
+    font-weight: 750;
+}
+
+.teacher-dashboard .dashboard-card-header p {
+    margin: 5px 0 0;
+
+    color: var(--teacher-text-muted);
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   8. ATTENDANCE ANALYTICS GRID
+   ========================================================= */
+
+.teacher-analytics-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: 20px;
+
+    margin-bottom: 28px;
+}
+
+.teacher-analytics-card {
+    min-width: 0;
+
+    background: var(--teacher-white);
+    border: 1px solid var(--teacher-border);
+    border-radius: var(--teacher-radius-lg);
+
+    box-shadow: var(--teacher-shadow-sm);
+
+    overflow: hidden;
+}
+
+.teacher-overall-card,
+.teacher-today-card {
+    min-height: 100%;
+}
+
+
+/* =========================================================
+   9. ANALYTICS HEADER
+   ========================================================= */
+
+.teacher-analytics-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 20px 22px;
+
+    border-bottom: 1px solid var(--teacher-border-light);
+}
+
+.teacher-analytics-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.teacher-analytics-heading-icon {
+    flex: 0 0 auto;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+}
+
+.teacher-heading-icon-green {
+    background: var(--teacher-primary-soft);
+    color: var(--teacher-primary);
+}
+
+.teacher-heading-icon-orange {
+    background: var(--teacher-orange-soft);
+    color: var(--teacher-orange);
+}
+
+.teacher-analytics-heading h2 {
+    margin: 0;
+
+    color: var(--teacher-text);
+    font-size: 17px;
+    font-weight: 750;
+}
+
+.teacher-analytics-heading p {
+    margin: 4px 0 0;
+
+    color: var(--teacher-text-muted);
+    font-size: 12px;
+}
+
+.teacher-view-link {
+    flex: 0 0 auto;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    color: var(--teacher-primary);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition: color 0.2s ease;
+}
+
+.teacher-view-link:hover {
+    color: var(--teacher-primary-dark);
+}
+
+
+/* =========================================================
+   10. OVERALL ATTENDANCE
+   ========================================================= */
+
+.teacher-overall-content {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+
+    gap: 25px;
+    align-items: center;
+
+    padding: 25px 22px;
+}
+
+.teacher-rate-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.teacher-rate-circle {
+    position: relative;
+
+    width: 142px;
+    height: 142px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            var(--teacher-primary) calc(var(--attendance-rate, 0) * 1%),
+            #e2e8f0 0
+        );
+}
+
+.teacher-rate-circle::before {
+    content: "";
+
+    position: absolute;
+    inset: 9px;
+
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+.teacher-rate-circle-inner {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.teacher-rate-circle-inner strong {
+    color: var(--teacher-text);
+
+    font-size: 27px;
+    font-weight: 850;
+
+    line-height: 1;
+}
+
+.teacher-rate-circle-inner span {
+    margin-top: 5px;
+
+    color: var(--teacher-text-muted);
+
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.teacher-rate-caption {
+    margin-top: 10px;
+
+    color: var(--teacher-text-muted);
+
+    font-size: 12px;
+    text-align: center;
+}
+
+
+/* =========================================================
+   11. ATTENDANCE BREAKDOWN
+   ========================================================= */
+
+.teacher-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.teacher-breakdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding: 12px 13px;
+
+    border: 1px solid var(--teacher-border-light);
+    border-radius: 11px;
+
+    background: #fafafa;
+}
+
+.teacher-breakdown-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.teacher-breakdown-icon {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 auto;
+
+    border-radius: 9px;
+}
+
+.teacher-breakdown-item span {
+    color: var(--teacher-text-light);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.teacher-breakdown-number {
+    font-size: 16px !important;
+    font-weight: 800 !important;
+}
+
+.teacher-breakdown-present .teacher-breakdown-icon {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.teacher-breakdown-absent .teacher-breakdown-icon {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.teacher-breakdown-permission .teacher-breakdown-icon {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.teacher-number-present {
+    color: #15803d !important;
+}
+
+.teacher-number-absent {
+    color: #dc2626 !important;
+}
+
+.teacher-number-permission {
+    color: #b45309 !important;
+}
+
+
+/* =========================================================
+   12. TOTAL RECORDS
+   ========================================================= */
+
+.teacher-total-records {
+    margin: 0 22px 22px;
+
+    padding: 14px 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    background: #f8fafc;
+
+    border: 1px solid var(--teacher-border-light);
+    border-radius: 11px;
+}
+
+.teacher-total-label {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.teacher-total-label strong {
+    color: var(--teacher-text);
+
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.teacher-total-label span {
+    color: var(--teacher-text-muted);
+
+    font-size: 11px;
+}
+
+.teacher-total-description {
+    color: var(--teacher-primary);
+
+    font-size: 21px;
+    font-weight: 850;
+}
+
+
+/* =========================================================
+   13. TODAY'S ATTENDANCE
+   ========================================================= */
+
+.teacher-today-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    background: var(--teacher-primary-soft);
+    color: var(--teacher-primary);
+
+    font-size: 11px;
+    font-weight: 750;
+}
+
+.teacher-today-overview {
+    padding: 22px;
+}
+
+.teacher-today-total {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+.teacher-today-total-label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.teacher-today-total-label span {
+    color: var(--teacher-text-muted);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.teacher-today-total-label strong {
+    color: var(--teacher-text);
+
+    font-size: 30px;
+    font-weight: 850;
+
+    line-height: 1;
+}
+
+.teacher-today-date {
+    color: var(--teacher-text-muted);
+
+    font-size: 12px;
+    font-weight: 600;
+    text-align: right;
+}
+
+
+/* =========================================================
+   14. TODAY PROGRESS BAR
+   ========================================================= */
+
+.teacher-today-progress {
+    margin-bottom: 20px;
+}
+
+.teacher-progress-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    color: var(--teacher-text-muted);
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.teacher-progress-track {
+    width: 100%;
+    height: 9px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background: #e2e8f0;
+}
+
+.teacher-progress-fill {
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #166534,
+            #22c55e
+        );
+
+    transition: width 0.4s ease;
+}
+
+
+/* =========================================================
+   15. TODAY BREAKDOWN
+   ========================================================= */
+
+.teacher-today-breakdown {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.teacher-today-stat {
+    min-width: 0;
+
+    padding: 13px 11px;
+
+    border: 1px solid var(--teacher-border-light);
+    border-radius: 11px;
+
+    background: #ffffff;
+}
+
+.teacher-today-stat-icon {
+    width: 31px;
+    height: 31px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 9px;
+
+    border-radius: 8px;
+}
+
+.teacher-today-stat strong {
+    display: block;
+
+    color: var(--teacher-text);
+
+    font-size: 19px;
+    font-weight: 850;
+
+    line-height: 1;
+}
+
+.teacher-today-stat span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--teacher-text-muted);
+
+    font-size: 10px;
+    font-weight: 650;
+}
+
+.teacher-today-present .teacher-today-stat-icon {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.teacher-today-absent .teacher-today-stat-icon {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.teacher-today-permission .teacher-today-stat-icon {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+
+/* =========================================================
+   16. TODAY HISTORY BUTTON
+   ========================================================= */
+
+.teacher-history-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    width: 100%;
+
+    margin-top: 18px;
+    padding: 11px 14px;
+
+    border: 1px solid #bbf7d0;
+    border-radius: 10px;
+
+    background: #f0fdf4;
+    color: var(--teacher-primary);
+
+    font-size: 12px;
+    font-weight: 750;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.teacher-history-button:hover {
+    background: #dcfce7;
+    border-color: #86efac;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   17. TODAY EMPTY STATE
+   ========================================================= */
+
+.teacher-today-empty {
+    padding: 30px 22px;
+
+    text-align: center;
+}
+
+.teacher-today-empty-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 13px;
+
+    border-radius: 14px;
+
+    background: var(--teacher-orange-soft);
+    color: var(--teacher-orange);
+}
+
+.teacher-today-empty h3 {
+    margin: 0;
+
+    color: var(--teacher-text);
+
+    font-size: 15px;
+    font-weight: 750;
+}
+
+.teacher-today-empty p {
+    max-width: 330px;
+
+    margin: 7px auto 17px;
+
+    color: var(--teacher-text-muted);
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   18. TEACHER BUTTONS
+   ========================================================= */
+
+.teacher-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    min-height: 40px;
+
+    padding: 9px 14px;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+    font-weight: 750;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.teacher-button:hover {
+    transform: translateY(-1px);
+}
+
+.teacher-button-primary {
+    background: var(--teacher-primary);
+    color: #ffffff;
+    border: 1px solid var(--teacher-primary);
+}
+
+.teacher-button-primary:hover {
+    background: var(--teacher-primary-dark);
+    border-color: var(--teacher-primary-dark);
+    box-shadow: 0 7px 18px rgba(22, 101, 52, 0.18);
+}
+
+.teacher-button-secondary {
+    background: #ffffff;
+    color: var(--teacher-text-light);
+    border: 1px solid var(--teacher-border);
+}
+
+.teacher-button-secondary:hover {
+    border-color: #cbd5e1;
+    background: #f8fafc;
+}
+
+
+/* =========================================================
+   19. TAKE ATTENDANCE BUTTON
+   ========================================================= */
+
+.teacher-take-attendance-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 10px 15px;
+
+    border: 0;
+    border-radius: 9px;
+
+    background: var(--teacher-primary);
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 750;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.teacher-take-attendance-button:hover {
+    background: var(--teacher-primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 7px 18px rgba(22, 101, 52, 0.18);
+}
+
+
+/* =========================================================
+   20. MY CLASSES
+   ========================================================= */
+
+.teacher-dashboard .teacher-class-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+
+    margin-bottom: 28px;
+}
+
+.teacher-dashboard .teacher-class-panel {
+    position: relative;
+
+    background: #ffffff;
+
+    border: 1px solid var(--teacher-border);
+    border-radius: var(--teacher-radius-lg);
+
+    padding: 20px;
+
+    box-shadow: var(--teacher-shadow-sm);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.teacher-dashboard .teacher-class-panel:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--teacher-shadow-md);
+    border-color: #cbd5e1;
+}
+
+.teacher-dashboard .teacher-class-panel-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+.teacher-class-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: var(--teacher-primary-soft);
+    color: var(--teacher-primary);
+}
+
+.teacher-dashboard .teacher-class-panel h3 {
+    margin: 0;
+
+    color: var(--teacher-text);
+
+    font-size: 16px;
+    font-weight: 750;
+}
+
+.teacher-dashboard .teacher-class-panel p {
+    margin: 4px 0 0;
+
+    color: var(--teacher-text-muted);
+
+    font-size: 11px;
+}
+
+.teacher-class-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    margin-bottom: 15px;
+}
+
+.teacher-class-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 5px 8px;
+
+    border-radius: 7px;
+
+    background: #f8fafc;
+    border: 1px solid var(--teacher-border-light);
+
+    color: var(--teacher-text-muted);
+
+    font-size: 10px;
+    font-weight: 650;
+}
+
+.teacher-subject-list {
+    margin-top: 15px;
+}
+
+.teacher-subject-list > strong {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--teacher-text-light);
+
+    font-size: 11px;
+    font-weight: 750;
+}
+
+.teacher-subject-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.teacher-subject-tag {
+    padding: 5px 8px;
+
+    border-radius: 6px;
+
+    background: #f0fdf4;
+    color: #166534;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.teacher-class-panel-actions {
+    display: flex;
+    gap: 8px;
+
+    margin-top: 18px;
+    padding-top: 16px;
+
+    border-top: 1px solid var(--teacher-border-light);
+}
+
+.teacher-class-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    flex: 1;
+
+    min-height: 36px;
+
+    padding: 7px 9px;
+
+    border-radius: 8px;
+
+    font-size: 10px;
+    font-weight: 750;
+
+    text-decoration: none;
+
+    border: 1px solid var(--teacher-border);
+
+    color: var(--teacher-text-light);
+    background: #ffffff;
+}
+
+.teacher-class-action-primary {
+    border-color: #bbf7d0;
+    color: var(--teacher-primary);
+    background: #f0fdf4;
+}
+
+
+/* =========================================================
+   21. RECENT ATTENDANCE
+   ========================================================= */
+
+.teacher-dashboard .recent-attendance {
+    margin-bottom: 28px;
+}
+
+.teacher-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.teacher-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    min-width: 680px;
+}
+
+.teacher-table th {
+    padding: 12px 16px;
+
+    background: #f8fafc;
+
+    color: #64748b;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+
+    border-bottom: 1px solid var(--teacher-border);
+}
+
+.teacher-table td {
+    padding: 13px 16px;
+
+    color: var(--teacher-text-light);
+
+    font-size: 12px;
+
+    border-bottom: 1px solid var(--teacher-border-light);
+
+    vertical-align: middle;
+}
+
+.teacher-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.teacher-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.teacher-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.teacher-table-date {
+    color: var(--teacher-text-muted);
+    white-space: nowrap;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   22. STUDENT TABLE CELL
+   ========================================================= */
+
+.teacher-student-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.teacher-student-photo,
+.teacher-student-avatar {
+    width: 34px;
+    height: 34px;
+
+    flex: 0 0 auto;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+.teacher-student-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--teacher-primary-soft);
+    color: var(--teacher-primary);
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.teacher-student-cell strong {
+    display: block;
+
+    color: var(--teacher-text);
+
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.teacher-student-cell span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--teacher-text-muted);
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   23. STATUS BADGES
+   ========================================================= */
+
+.teacher-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 5px 9px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+.teacher-status-badge.status-present {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.teacher-status-badge.status-absent {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.teacher-status-badge.status-permission {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.teacher-status-badge.status-default {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+
+/* =========================================================
+   24. CARD LINK
+   ========================================================= */
+
+.teacher-card-link {
+    color: var(--teacher-primary);
+
+    font-size: 11px;
+    font-weight: 750;
+
+    text-decoration: none;
+}
+
+.teacher-card-link:hover {
+    color: var(--teacher-primary-dark);
+}
+
+
+/* =========================================================
+   25. EMPTY STATE
+   ========================================================= */
+
+.teacher-empty-state {
+    padding: 45px 20px;
+
+    text-align: center;
+}
+
+.teacher-empty-icon {
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 14px;
+
+    border-radius: 15px;
+
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.teacher-empty-state h3 {
+    margin: 0;
+
+    color: var(--teacher-text);
+
+    font-size: 15px;
+    font-weight: 750;
+}
+
+.teacher-empty-state p {
+    max-width: 420px;
+
+    margin: 7px auto 0;
+
+    color: var(--teacher-text-muted);
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   26. QUICK ACTIONS
+   ========================================================= */
+
+.teacher-dashboard .quick-actions {
+    margin-bottom: 28px;
+}
+
+.quick-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.quick-action-card {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    min-width: 0;
+
+    padding: 15px;
+
+    border: 1px solid var(--teacher-border);
+    border-radius: 13px;
+
+    background: #ffffff;
+
+    text-decoration: none;
+
+    box-shadow: var(--teacher-shadow-sm);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.quick-action-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--teacher-shadow-md);
+    border-color: #cbd5e1;
+}
+
+.quick-action-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 auto;
+
+    border-radius: 10px;
+}
+
+.quick-action-icon-green {
+    background: var(--teacher-primary-soft);
+    color: var(--teacher-primary);
+}
+
+.quick-action-icon-blue {
+    background: var(--teacher-blue-soft);
+    color: var(--teacher-blue);
+}
+
+.quick-action-icon-orange {
+    background: var(--teacher-orange-soft);
+    color: var(--teacher-orange);
+}
+
+.quick-action-icon-purple {
+    background: var(--teacher-purple-soft);
+    color: var(--teacher-purple);
+}
+
+.quick-action-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.quick-action-content strong {
+    display: block;
+
+    color: var(--teacher-text);
+
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.quick-action-content span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--teacher-text-muted);
+
+    font-size: 10px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.quick-action-arrow {
+    color: #94a3b8;
+    flex: 0 0 auto;
+}
+
+
+/* =========================================================
+   27. TEACHER CLASSES PAGE SUPPORT
+   ========================================================= */
+
+.teacher-classes-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+.teacher-summary-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 18px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--teacher-border);
+    border-radius: 14px;
+
+    box-shadow: var(--teacher-shadow-sm);
+}
+
+.teacher-summary-card h3 {
+    margin: 0;
+
+    color: var(--teacher-text);
+
+    font-size: 23px;
+    font-weight: 850;
+}
+
+.teacher-summary-card p {
+    margin: 4px 0 0;
+
+    color: var(--teacher-text-muted);
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   28. TEACHER STUDENTS PAGE
+   ========================================================= */
+
+.teacher-students-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+
+    margin-bottom: 22px;
+}
+
+.teacher-student-summary-card {
+    padding: 18px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--teacher-border);
+    border-radius: 14px;
+
+    box-shadow: var(--teacher-shadow-sm);
+}
+
+.teacher-student-summary-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 12px;
+
+    border-radius: 10px;
+
+    background: var(--teacher-primary-soft);
+    color: var(--teacher-primary);
+}
+
+.teacher-student-summary-card strong {
+    display: block;
+
+    color: var(--teacher-text);
+
+    font-size: 24px;
+    font-weight: 850;
+}
+
+.teacher-student-summary-card span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--teacher-text-muted);
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   29. STUDENT FILTER CARD
+   ========================================================= */
+
+.teacher-students-filter-card {
+    margin-bottom: 20px;
+
+    padding: 18px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--teacher-border);
+    border-radius: 14px;
+
+    box-shadow: var(--teacher-shadow-sm);
+}
+
+.teacher-students-filter-form {
+    display: grid;
+
+    grid-template-columns:
+        minmax(170px, 0.8fr)
+        minmax(220px, 1.2fr)
+        auto;
+
+    gap: 12px;
+
+    align-items: end;
+}
+
+.teacher-filter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.teacher-filter-field label {
+    color: var(--teacher-text-light);
+
+    font-size: 11px;
+    font-weight: 750;
+}
+
+.teacher-filter-field input,
+.teacher-filter-field select {
+    width: 100%;
+
+    min-height: 40px;
+
+    padding: 9px 11px;
+
+    border: 1px solid var(--teacher-border);
+    border-radius: 9px;
+
+    background: #ffffff;
+    color: var(--teacher-text);
+
+    font-family: inherit;
+    font-size: 12px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.teacher-filter-field input:focus,
+.teacher-filter-field select:focus {
+    border-color: #86efac;
+
+    box-shadow:
+        0 0 0 3px rgba(34, 197, 94, 0.10);
+}
+
+.teacher-search-field {
+    position: relative;
+}
+
+.teacher-filter-actions {
+    display: flex;
+    gap: 8px;
+}
+
+
+/* =========================================================
+   30. STUDENTS TABLE CARD
+   ========================================================= */
+
+.teacher-students-table-card {
+    background: #ffffff;
+
+    border: 1px solid var(--teacher-border);
+    border-radius: 15px;
+
+    box-shadow: var(--teacher-shadow-sm);
+
+    overflow: hidden;
+}
+
+.teacher-result-count {
+    padding: 14px 18px;
+
+    color: var(--teacher-text-muted);
+
+    font-size: 11px;
+
+    border-bottom: 1px solid var(--teacher-border-light);
+}
+
+.teacher-students-empty {
+    padding: 45px 20px;
+
+    text-align: center;
+}
+
+.teacher-students-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.teacher-students-table {
+    width: 100%;
+    min-width: 780px;
+
+    border-collapse: collapse;
+}
+
+.teacher-students-table th {
+    padding: 12px 15px;
+
+    background: #f8fafc;
+
+    color: #64748b;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    text-align: left;
+    text-transform: uppercase;
+
+    border-bottom: 1px solid var(--teacher-border);
+}
+
+.teacher-students-table td {
+    padding: 13px 15px;
+
+    color: var(--teacher-text-light);
+
+    font-size: 12px;
+
+    border-bottom: 1px solid var(--teacher-border-light);
+}
+
+.teacher-students-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.student-admission-number {
+    color: var(--teacher-text-muted);
+
+    font-size: 10px;
+    font-weight: 650;
+}
+
+.student-class-info {
+    color: var(--teacher-text-light);
+    font-size: 11px;
+    font-weight: 650;
+}
+
+.student-gender {
+    color: var(--teacher-text-muted);
+    font-size: 11px;
+}
+
+.teacher-student-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    padding: 7px 10px;
+
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+
+    background: #f0fdf4;
+    color: var(--teacher-primary);
+
+    font-size: 10px;
+    font-weight: 750;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   31. GENERAL TEACHER FORM SUPPORT
+   ========================================================= */
+
+.teacher-page .teacher-form-card,
+.teacher-page .teacher-filter-card {
+    background: #ffffff;
+
+    border: 1px solid var(--teacher-border);
+    border-radius: 15px;
+
+    box-shadow: var(--teacher-shadow-sm);
+}
+
+.teacher-page .teacher-form-card {
+    padding: 20px;
+}
+
+.teacher-page .teacher-form-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+.teacher-page .teacher-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.teacher-page .teacher-form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.teacher-page .teacher-form-group label {
+    color: var(--teacher-text-light);
+
+    font-size: 11px;
+    font-weight: 750;
+}
+
+.teacher-page .teacher-form-group input,
+.teacher-page .teacher-form-group select,
+.teacher-page .teacher-form-group textarea {
+    width: 100%;
+
+    padding: 10px 12px;
+
+    border: 1px solid var(--teacher-border);
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: var(--teacher-text);
+
+    font-family: inherit;
+    font-size: 12px;
+
+    outline: none;
+}
+
+.teacher-page .teacher-form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.teacher-page .teacher-form-group input:focus,
+.teacher-page .teacher-form-group select:focus,
+.teacher-page .teacher-form-group textarea:focus {
+    border-color: #86efac;
+
+    box-shadow:
+        0 0 0 3px rgba(34, 197, 94, 0.10);
+}
+
+
+/* =========================================================
+   32. TEACHER ALERTS
+   ========================================================= */
+
+.teacher-page .teacher-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+    padding: 12px 14px;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.teacher-page .teacher-alert-success {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+}
+
+.teacher-page .teacher-alert-error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+}
+
+.teacher-page .teacher-alert-warning {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    color: #92400e;
+}
+
+.teacher-page .teacher-alert-info {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1d4ed8;
+}
+
+
+/* =========================================================
+   33. TEACHER RESPONSIVE - 1100px
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .teacher-dashboard .dashboard-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .teacher-analytics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .teacher-dashboard .teacher-class-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .quick-actions-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .teacher-students-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .teacher-classes-summary {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   34. TEACHER RESPONSIVE - 900px
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .teacher-overall-content {
+        grid-template-columns: 150px minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .teacher-rate-circle {
+        width: 125px;
+        height: 125px;
+    }
+
+    .teacher-rate-circle-inner strong {
+        font-size: 24px;
+    }
+
+    .teacher-students-filter-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .teacher-filter-actions {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+/* =========================================================
+   35. TEACHER RESPONSIVE - 800px
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .teacher-dashboard .teacher-welcome {
+        padding: 24px;
+    }
+
+    .teacher-dashboard .teacher-welcome h2 {
+        font-size: 21px;
+    }
+
+    .teacher-dashboard .dashboard-page-header h1 {
+        font-size: 26px;
+    }
+
+    .teacher-overall-content {
+        grid-template-columns: 1fr;
+    }
+
+    .teacher-rate-section {
+        padding-bottom: 4px;
+    }
+
+    .teacher-breakdown {
+        width: 100%;
+    }
+
+    .teacher-dashboard .teacher-class-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .teacher-classes-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .teacher-dashboard .teacher-class-panel {
+        padding: 18px;
+    }
+
+    .teacher-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .teacher-page .teacher-form-group.full-width {
+        grid-column: auto;
+    }
+}
+
+
+/* =========================================================
+   36. TEACHER RESPONSIVE - 600px
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .teacher-dashboard .dashboard-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .teacher-dashboard .stat-card {
+        padding: 16px;
+    }
+
+    .teacher-dashboard .stat-card h3 {
+        font-size: 23px;
+    }
+
+    .teacher-dashboard .stat-card-icon {
+        width: 38px;
+        height: 38px;
+        margin-bottom: 12px;
+    }
+
+    .teacher-dashboard .teacher-welcome {
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    .teacher-dashboard .teacher-welcome h2 {
+        font-size: 19px;
+    }
+
+    .teacher-dashboard .teacher-welcome p {
+        font-size: 12px;
+    }
+
+    .teacher-analytics-header {
+        padding: 16px;
+    }
+
+    .teacher-analytics-heading-icon {
+        width: 37px;
+        height: 37px;
+    }
+
+    .teacher-analytics-heading h2 {
+        font-size: 15px;
+    }
+
+    .teacher-analytics-heading p {
+        font-size: 10px;
+    }
+
+    .teacher-view-link {
+        font-size: 10px;
+    }
+
+    .teacher-overall-content {
+        padding: 20px 16px;
+    }
+
+    .teacher-total-records {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .teacher-today-overview {
+        padding: 18px 16px;
+    }
+
+    .teacher-today-breakdown {
+        gap: 7px;
+    }
+
+    .teacher-today-stat {
+        padding: 11px 8px;
+    }
+
+    .teacher-today-stat strong {
+        font-size: 17px;
+    }
+
+    .quick-actions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .teacher-students-summary {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .teacher-student-summary-card {
+        padding: 14px;
+    }
+
+    .teacher-students-filter-form {
+        grid-template-columns: 1fr;
+    }
+
+    .teacher-filter-actions {
+        grid-column: auto;
+    }
+
+    .teacher-filter-actions .teacher-button {
+        flex: 1;
+    }
+
+}
+
+
+/* =========================================================
+   37. TEACHER RESPONSIVE - 420px
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .teacher-dashboard .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .teacher-dashboard .dashboard-page-header h1 {
+        font-size: 23px;
+    }
+
+    .teacher-dashboard .teacher-welcome {
+        padding: 18px;
+    }
+
+    .teacher-dashboard .teacher-welcome h2 {
+        font-size: 18px;
+    }
+
+    .teacher-analytics-header {
+        align-items: flex-start;
+    }
+
+    .teacher-analytics-heading {
+        gap: 9px;
+    }
+
+    .teacher-view-link {
+        display: none;
+    }
+
+    .teacher-rate-circle {
+        width: 115px;
+        height: 115px;
+    }
+
+    .teacher-rate-circle-inner strong {
+        font-size: 22px;
+    }
+
+    .teacher-breakdown-item {
+        padding: 10px;
+    }
+
+    .teacher-breakdown-icon {
+        width: 29px;
+        height: 29px;
+    }
+
+    .teacher-breakdown-number {
+        font-size: 14px !important;
+    }
+
+    .teacher-today-total-label strong {
+        font-size: 26px;
+    }
+
+    .teacher-today-date {
+        font-size: 10px;
+    }
+
+    .teacher-today-breakdown {
+        grid-template-columns: 1fr;
+    }
+
+    .teacher-today-stat {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .teacher-today-stat-icon {
+        margin-bottom: 0;
+    }
+
+    .teacher-today-stat strong {
+        display: inline;
+    }
+
+    .teacher-today-stat span {
+        display: inline;
+        margin-left: 4px;
+    }
+
+    .teacher-dashboard .teacher-class-panel {
+        padding: 16px;
+    }
+
+    .teacher-class-panel-actions {
+        flex-direction: column;
+    }
+
+    .teacher-students-summary {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   38. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .teacher-page *,
+    .teacher-page *::before,
+    .teacher-page *::after {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+
+}
+
+/* =========================================================
+   TEACHER - MY STUDENTS
+   UI ONLY
+========================================================= */
+
+.teacher-students-page {
+    --students-border: #e5e7eb;
+    --students-muted: #64748b;
+    --students-text: #0f172a;
+    --students-primary: #16a34a;
+}
+
+
+/* =========================================================
+   PAGE HEADER ICON
+========================================================= */
+
+.teacher-students-page .teacher-page-icon-small {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 11px;
+}
+
+.teacher-students-page .teacher-page-icon-small svg {
+    width: 21px;
+    height: 21px;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.teacher-student-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.teacher-student-stat-card {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 17px 18px;
+    background: #ffffff;
+    border: 1px solid var(--students-border);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.teacher-student-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(15, 23, 42, 0.07);
+}
+
+
+/* SMALL ICONS */
+
+.teacher-student-stat-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background: #ecfdf5;
+    color: #16a34a;
+}
+
+.teacher-student-stat-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+.teacher-student-stat-icon.male {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.teacher-student-stat-icon.female {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.teacher-student-stat-icon.active {
+    background: #f0fdf4;
+    color: #15803d;
+}
+
+.teacher-student-stat-card span {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--students-muted);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.teacher-student-stat-card strong {
+    display: block;
+    color: var(--students-text);
+    font-size: 22px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FILTER CARD
+========================================================= */
+
+.teacher-student-filter {
+    margin-bottom: 28px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid var(--students-border);
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.035);
+}
+
+.teacher-student-filter-title {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 18px;
+}
+
+.teacher-filter-title-icon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+.teacher-filter-title-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.teacher-student-filter-title h2 {
+    margin: 0 0 2px;
+    color: var(--students-text);
+    font-size: 16px;
+    font-weight: 650;
+}
+
+.teacher-student-filter-title p {
+    margin: 0;
+    color: var(--students-muted);
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   FILTER FORM
+========================================================= */
+
+.teacher-student-filter-form {
+    display: grid;
+    grid-template-columns:
+        minmax(210px, 0.9fr)
+        minmax(260px, 1.4fr)
+        auto;
+    align-items: end;
+    gap: 14px;
+}
+
+.teacher-student-filter-field label {
+    display: block;
+    margin-bottom: 7px;
+    color: #334155;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.teacher-student-filter-field select,
+.teacher-student-search-box input {
+    width: 100%;
+    height: 42px;
+    border: 1px solid #dbe2ea;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #0f172a;
+    font-size: 13px;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.teacher-student-filter-field select {
+    padding: 0 12px;
+}
+
+.teacher-student-filter-field select:focus,
+.teacher-student-search-box:focus-within {
+    border-color: #86efac;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.09);
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.teacher-student-search-box {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 12px;
+    border: 1px solid #dbe2ea;
+    border-radius: 9px;
+    background: #ffffff;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.teacher-student-search-box svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    color: #94a3b8;
+}
+
+.teacher-student-search-box input {
+    height: 100%;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+}
+
+.teacher-student-search-box input:focus {
+    outline: none;
+}
+
+
+/* =========================================================
+   FILTER BUTTONS
+========================================================= */
+
+.teacher-student-filter-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.teacher-student-search-button,
+.teacher-student-clear-button {
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 0 15px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.teacher-student-search-button {
+    border: 1px solid #16a34a;
+    background: #16a34a;
+    color: #ffffff;
+}
+
+.teacher-student-search-button:hover {
+    background: #15803d;
+    border-color: #15803d;
+}
+
+.teacher-student-search-button svg {
+    width: 15px;
+    height: 15px;
+}
+
+.teacher-student-clear-button {
+    border: 1px solid #dbe2ea;
+    background: #ffffff;
+    color: #475569;
+}
+
+.teacher-student-clear-button:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+
+/* =========================================================
+   STUDENT LIST HEADER
+========================================================= */
+
+.teacher-student-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.teacher-student-list-header h2 {
+    margin: 0 0 3px;
+    color: var(--students-text);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.teacher-student-list-header p {
+    margin: 0;
+    color: var(--students-muted);
+    font-size: 12px;
+}
+
+.teacher-student-result-count {
+    flex-shrink: 0;
+    padding: 6px 10px;
+    border: 1px solid #dbe2ea;
+    border-radius: 20px;
+    background: #f8fafc;
+    color: #475569;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   STUDENT TABLE
+========================================================= */
+
+.teacher-student-table-card {
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid var(--students-border);
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.035);
+}
+
+.teacher-student-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.teacher-student-table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+}
+
+.teacher-student-table thead {
+    background: #f8fafc;
+}
+
+.teacher-student-table th {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 650;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.teacher-student-table td {
+    padding: 13px 16px;
+    border-bottom: 1px solid #eef2f6;
+    color: #334155;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.teacher-student-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.teacher-student-table tbody tr {
+    transition: background 0.15s ease;
+}
+
+.teacher-student-table tbody tr:hover {
+    background: #fafdfb;
+}
+
+
+/* =========================================================
+   STUDENT PROFILE
+========================================================= */
+
+.teacher-student-profile {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 190px;
+}
+
+.teacher-student-avatar {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #ecfdf5;
+    color: #15803d;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.teacher-student-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.teacher-student-profile-text strong {
+    display: block;
+    margin-bottom: 2px;
+    color: #0f172a;
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.teacher-student-profile-text span {
+    display: block;
+    color: #94a3b8;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   ADMISSION
+========================================================= */
+
+.teacher-student-admission {
+    color: #475569;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CLASS
+========================================================= */
+
+.teacher-student-class-info strong {
+    display: block;
+    margin-bottom: 2px;
+    color: #334155;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.teacher-student-class-info span {
+    display: block;
+    color: #94a3b8;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   GENDER
+========================================================= */
+
+.teacher-student-gender {
+    display: inline-flex;
+    align-items: center;
+    min-height: 25px;
+    padding: 0 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.teacher-student-gender.teacher-gender-male {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.teacher-student-gender.teacher-gender-female {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.teacher-student-gender.teacher-gender-default {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.teacher-student-status {
+    display: inline-flex;
+    align-items: center;
+    min-height: 25px;
+    padding: 0 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.teacher-student-status.teacher-status-active {
+    background: #ecfdf5;
+    color: #15803d;
+}
+
+.teacher-student-status.teacher-status-inactive {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.teacher-student-status.teacher-status-warning {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.teacher-student-status.teacher-status-default {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+
+/* =========================================================
+   ATTENDANCE ACTION
+========================================================= */
+
+.teacher-student-attendance-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 32px;
+    padding: 0 10px;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    background: #f0fdf4;
+    color: #15803d;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.teacher-student-attendance-button:hover {
+    border-color: #86efac;
+    background: #dcfce7;
+    color: #166534;
+}
+
+.teacher-student-attendance-button svg {
+    width: 14px;
+    height: 14px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.teacher-student-empty {
+    padding: 55px 20px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid var(--students-border);
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.035);
+}
+
+.teacher-student-empty-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+.teacher-student-empty-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.teacher-student-empty h3 {
+    margin: 0 0 6px;
+    color: #0f172a;
+    font-size: 16px;
+}
+
+.teacher-student-empty p {
+    max-width: 430px;
+    margin: 0 auto 18px;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .teacher-student-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .teacher-student-filter-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .teacher-student-filter-buttons {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .teacher-student-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .teacher-student-stat-card {
+        min-height: 78px;
+        padding: 13px;
+    }
+
+    .teacher-student-stat-icon {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+    }
+
+    .teacher-student-stat-icon svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .teacher-student-stat-card strong {
+        font-size: 19px;
+    }
+
+    .teacher-student-filter {
+        padding: 15px;
+    }
+
+    .teacher-student-filter-form {
+        grid-template-columns: 1fr;
+    }
+
+    .teacher-student-filter-buttons {
+        grid-column: auto;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .teacher-student-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .teacher-student-stat-card {
+        min-height: 70px;
+    }
+
+    .teacher-student-filter-buttons {
+        width: 100%;
+    }
+
+    .teacher-student-search-button,
+    .teacher-student-clear-button {
+        flex: 1;
+    }
+
+    .teacher-student-list-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+}

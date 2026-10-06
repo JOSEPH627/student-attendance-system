@@ -1,0 +1,1084 @@
+/* =========================================================
+   TEACHER ATTENDANCE HISTORY
+   GREEN + WHITE THEME
+   UI ONLY
+   ========================================================= */
+
+.teacher-history-filter-card,
+.teacher-history-card,
+.teacher-history-empty {
+    --teacher-green: #16a34a;
+    --teacher-dark-green: #15803d;
+    --teacher-deep-green: #166534;
+    --teacher-light-green: #f0fdf4;
+    --teacher-soft-green: #dcfce7;
+    --teacher-green-border: #bbf7d0;
+
+    --teacher-white: #ffffff;
+
+    --teacher-text: #1f2937;
+    --teacher-muted: #64748b;
+    --teacher-border: #e2e8f0;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.dashboard-main .page-header {
+    margin-bottom: 24px;
+}
+
+.dashboard-main .page-header .page-eyebrow {
+    display: inline-block;
+    margin-bottom: 6px;
+
+    color: #16a34a;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.dashboard-main .page-header h1 {
+    margin: 0 0 6px;
+
+    color: #166534;
+
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.dashboard-main .page-header p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   ALERT
+   ========================================================= */
+
+.dashboard-main .alert {
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.dashboard-main .alert-error {
+    border-color: #fecaca;
+}
+
+
+/* =========================================================
+   FILTER CARD
+   ========================================================= */
+
+.teacher-history-filter-card {
+    margin-bottom: 24px;
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #bbf7d0;
+    border-top: 4px solid #16a34a;
+
+    border-radius: 14px;
+
+    box-shadow: 0 4px 14px rgba(22, 163, 74, 0.07);
+}
+
+.teacher-history-filter-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 22px;
+}
+
+.teacher-history-filter-header h2 {
+    margin: 0 0 5px;
+
+    color: #166534;
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.teacher-history-filter-header p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+.teacher-history-reset {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+
+    padding: 8px 15px;
+
+    background: #ffffff;
+
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+
+    color: #15803d;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.teacher-history-reset:hover {
+    background: #f0fdf4;
+    border-color: #16a34a;
+    color: #166534;
+}
+
+
+/* =========================================================
+   FILTER FORM
+   ========================================================= */
+
+.teacher-history-filter-form {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr))
+        auto;
+
+    align-items: end;
+
+    gap: 16px;
+}
+
+.teacher-history-filter-form .form-group {
+    margin: 0;
+}
+
+.teacher-history-filter-form label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #166534;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.teacher-history-filter-form select,
+.teacher-history-filter-form input[type="search"],
+.teacher-history-filter-form input[type="date"] {
+    width: 100%;
+    min-height: 43px;
+
+    padding: 9px 11px;
+
+    background: #ffffff;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+
+    color: #1f2937;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.teacher-history-filter-form select:hover,
+.teacher-history-filter-form input[type="search"]:hover,
+.teacher-history-filter-form input[type="date"]:hover {
+    border-color: #86efac;
+}
+
+.teacher-history-filter-form select:focus,
+.teacher-history-filter-form input[type="search"]:focus,
+.teacher-history-filter-form input[type="date"]:focus {
+    border-color: #16a34a;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 163, 74, 0.11);
+}
+
+
+/* =========================================================
+   FILTER BUTTON
+   ========================================================= */
+
+.teacher-history-filter-button {
+    display: flex;
+    align-items: end;
+}
+
+.teacher-history-filter-button .btn {
+    min-height: 43px;
+
+    padding: 9px 18px;
+
+    background: #16a34a !important;
+
+    border: 1px solid #16a34a !important;
+    border-radius: 8px;
+
+    color: #ffffff !important;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.teacher-history-filter-button .btn:hover {
+    background: #15803d !important;
+    border-color: #15803d !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   STATISTICS
+   ========================================================= */
+
+.teacher-history-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 15px;
+
+    margin-bottom: 24px;
+}
+
+.teacher-history-stat-card {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 84px;
+
+    padding: 15px;
+
+    background: #ffffff;
+
+    border: 1px solid #bbf7d0;
+    border-top: 3px solid #16a34a;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 12px rgba(22, 163, 74, 0.05);
+}
+
+.teacher-history-stat-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #dcfce7;
+
+    border: 1px solid #bbf7d0;
+    border-radius: 10px;
+
+    color: #15803d;
+
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.teacher-history-stat-card span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #64748b;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.teacher-history-stat-card strong {
+    display: block;
+
+    color: #166534;
+
+    font-size: 21px;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   STAT VARIATIONS
+   ========================================================= */
+
+.teacher-history-stat-card.present {
+    border-top-color: #16a34a;
+}
+
+.teacher-history-stat-card.present
+.teacher-history-stat-icon {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.teacher-history-stat-card.absent {
+    border-top-color: #166534;
+}
+
+.teacher-history-stat-card.absent
+.teacher-history-stat-icon {
+    background: #f0fdf4;
+    color: #166534;
+}
+
+.teacher-history-stat-card.permission {
+    border-top-color: #22c55e;
+}
+
+.teacher-history-stat-card.permission
+.teacher-history-stat-icon {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.teacher-history-stat-card.rate {
+    border-top-color: #15803d;
+}
+
+.teacher-history-stat-card.rate
+.teacher-history-stat-icon {
+    background: #f0fdf4;
+    color: #166534;
+}
+
+
+/* =========================================================
+   MAIN HISTORY CARD
+   ========================================================= */
+
+.teacher-history-card {
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #bbf7d0;
+    border-radius: 14px;
+
+    box-shadow: 0 4px 14px rgba(22, 163, 74, 0.06);
+}
+
+.teacher-history-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 21px 24px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #dcfce7;
+}
+
+.teacher-history-card-header .page-eyebrow {
+    color: #16a34a;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.teacher-history-card-header h2 {
+    margin: 5px 0 0;
+
+    color: #166534;
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.teacher-history-record-count {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 7px 11px;
+
+    background: #f0fdf4;
+
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+
+    color: #15803d;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+   ========================================================= */
+
+.teacher-history-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+/* =========================================================
+   HISTORY TABLE
+   ========================================================= */
+
+.teacher-history-table {
+    width: 100%;
+
+    min-width: 1050px;
+
+    border-collapse: collapse;
+}
+
+.teacher-history-table thead {
+    background: #f0fdf4;
+}
+
+.teacher-history-table th {
+    padding: 13px 14px;
+
+    border-bottom: 1px solid #bbf7d0;
+
+    color: #166534;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-align: left;
+
+    white-space: nowrap;
+}
+
+.teacher-history-table td {
+    padding: 14px;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    color: #1f2937;
+
+    font-size: 12px;
+
+    vertical-align: middle;
+}
+
+.teacher-history-table tbody tr {
+    background: #ffffff;
+
+    transition: background-color 0.2s ease;
+}
+
+.teacher-history-table tbody tr:hover {
+    background: #fafffb;
+}
+
+.teacher-history-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   DATE
+   ========================================================= */
+
+.history-date {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 62px;
+}
+
+.history-date strong {
+    color: #166534;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    line-height: 1.1;
+}
+
+.history-date span {
+    margin-top: 3px;
+
+    color: #64748b;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   STUDENT
+   ========================================================= */
+
+.history-student {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 215px;
+}
+
+.history-student-avatar {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #dcfce7;
+
+    border: 2px solid #bbf7d0;
+
+    color: #15803d;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    object-fit: cover;
+}
+
+.history-avatar-placeholder {
+    background: #f0fdf4;
+}
+
+.history-student strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #166534;
+
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.history-student span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   CLASS
+   ========================================================= */
+
+.history-class,
+.history-subject {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 115px;
+}
+
+.history-class strong,
+.history-subject strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #166534;
+
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.history-class span,
+.history-subject span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.teacher-history-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 75px;
+
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.teacher-history-status.present {
+    background: #dcfce7;
+
+    border: 1px solid #bbf7d0;
+
+    color: #15803d;
+}
+
+.teacher-history-status.absent {
+    background: #f0fdf4;
+
+    border: 1px solid #86efac;
+
+    color: #166534;
+}
+
+.teacher-history-status.permission {
+    background: #dcfce7;
+
+    border: 1px solid #86efac;
+
+    color: #166534;
+}
+
+
+/* =========================================================
+   PERMISSION REASON
+   ========================================================= */
+
+.history-reason-button {
+    min-height: 32px;
+
+    padding: 6px 10px;
+
+    background: #ffffff;
+
+    border: 1px solid #bbf7d0;
+    border-radius: 7px;
+
+    color: #15803d;
+
+    font-size: 10px;
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.history-reason-button:hover {
+    background: #f0fdf4;
+
+    border-color: #16a34a;
+
+    color: #166534;
+}
+
+.history-no-reason {
+    color: #94a3b8;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.teacher-history-empty {
+    padding: 55px 24px;
+
+    text-align: center;
+
+    background: #ffffff;
+}
+
+.teacher-history-empty-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 16px;
+
+    background: #dcfce7;
+
+    border: 1px solid #bbf7d0;
+    border-radius: 14px;
+
+    color: #16a34a;
+
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.teacher-history-empty h3 {
+    margin: 0 0 8px;
+
+    color: #166534;
+
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.teacher-history-empty p {
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    color: #64748b;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.teacher-history-empty .btn {
+    margin-top: 22px;
+
+    background: #16a34a !important;
+
+    border: 1px solid #16a34a !important;
+    border-radius: 8px;
+
+    color: #ffffff !important;
+
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.teacher-history-empty .btn:hover {
+    background: #15803d !important;
+    border-color: #15803d !important;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.teacher-reason-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.teacher-reason-modal.show {
+    display: flex;
+}
+
+.teacher-reason-modal-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(15, 23, 42, 0.55);
+}
+
+.teacher-reason-modal-content {
+    position: relative;
+
+    z-index: 1;
+
+    width: min(460px, 100%);
+
+    padding: 28px;
+
+    background: #ffffff;
+
+    border: 1px solid #bbf7d0;
+    border-top: 4px solid #16a34a;
+
+    border-radius: 14px;
+
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.20);
+
+    text-align: center;
+}
+
+.teacher-reason-modal-close {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f0fdf4;
+
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+
+    color: #166534;
+
+    font-size: 20px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.teacher-reason-modal-close:hover {
+    background: #dcfce7;
+}
+
+.teacher-reason-modal-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 15px;
+
+    background: #dcfce7;
+
+    border: 1px solid #bbf7d0;
+    border-radius: 12px;
+
+    color: #15803d;
+
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.teacher-reason-modal-content .page-eyebrow {
+    color: #16a34a;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.teacher-reason-modal-content h2 {
+    margin: 6px 0 12px;
+
+    color: #166534;
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.teacher-reason-text {
+    margin: 0;
+
+    color: #475569;
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   MODAL BODY LOCK
+   ========================================================= */
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .teacher-history-filter-form {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    .teacher-history-filter-button {
+        grid-column: span 3;
+    }
+
+    .teacher-history-filter-button .btn {
+        width: 100%;
+    }
+
+    .teacher-history-stats {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .teacher-history-filter-form {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .teacher-history-filter-button {
+        grid-column: span 2;
+    }
+
+    .teacher-history-stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .dashboard-main .page-header h1 {
+        font-size: 24px;
+    }
+
+    .teacher-history-filter-card {
+        padding: 18px;
+    }
+
+    .teacher-history-filter-header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .teacher-history-reset {
+        width: 100%;
+    }
+
+    .teacher-history-filter-form {
+        grid-template-columns: 1fr;
+    }
+
+    .teacher-history-filter-button {
+        grid-column: auto;
+    }
+
+    .teacher-history-filter-button .btn {
+        width: 100%;
+    }
+
+    .teacher-history-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .teacher-history-stat-card {
+        min-height: 78px;
+        padding: 13px;
+    }
+
+    .teacher-history-stat-icon {
+        width: 37px;
+        height: 37px;
+    }
+
+    .teacher-history-stat-card strong {
+        font-size: 19px;
+    }
+
+    .teacher-history-card-header {
+        padding: 18px;
+
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .teacher-history-record-count {
+        width: 100%;
+        justify-content: center;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .teacher-history-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .teacher-history-filter-card {
+        border-radius: 11px;
+    }
+
+    .teacher-history-card {
+        border-radius: 11px;
+    }
+
+    .teacher-history-empty {
+        padding: 42px 18px;
+    }
+
+    .teacher-reason-modal-content {
+        padding: 24px 18px;
+    }
+
+}

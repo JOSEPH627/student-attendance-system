@@ -1,0 +1,537 @@
+/* =========================================================
+   STUDENT ATTENDANCE SYSTEM
+   Authentication Styles
+   ========================================================= */
+
+
+/* =========================================================
+   1. AUTH PAGE
+   ========================================================= */
+
+.auth-page {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8fafc 0%,
+            #f0fdf4 100%
+        );
+}
+
+
+/* =========================================================
+   2. AUTH CONTAINER
+   ========================================================= */
+
+.auth-container {
+    width: 100%;
+
+    max-width: 1080px;
+
+    min-height: 620px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(15, 23, 42, 0.12);
+}
+
+
+/* =========================================================
+   3. AUTH VISUAL SIDE
+   ========================================================= */
+
+.auth-visual {
+    position: relative;
+
+    min-height: 620px;
+
+    overflow: hidden;
+
+    background: #166534;
+}
+
+.auth-visual img {
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+.auth-visual::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(22, 101, 52, 0.82),
+            rgba(15, 23, 42, 0.50)
+        );
+}
+
+
+/* =========================================================
+   4. VISUAL CONTENT
+   ========================================================= */
+
+.auth-visual-content {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 45px;
+
+    right: 45px;
+
+    bottom: 45px;
+
+    color: #ffffff;
+}
+
+.auth-visual-label {
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    color: #bbf7d0;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.auth-visual-content h2 {
+    max-width: 450px;
+
+    margin-bottom: 15px;
+
+    font-size: 38px;
+
+    line-height: 1.12;
+
+    letter-spacing: -1px;
+}
+
+.auth-visual-content p {
+    max-width: 430px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.78
+        );
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   5. AUTH FORM SIDE
+   ========================================================= */
+
+.auth-form-section {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 55px;
+}
+
+.auth-form-wrapper {
+    width: 100%;
+
+    max-width: 400px;
+}
+
+
+/* =========================================================
+   6. AUTH BRAND
+   ========================================================= */
+
+.auth-brand {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 35px;
+
+    color: #0f172a;
+
+    font-weight: 700;
+}
+
+.auth-brand-icon {
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #16a34a;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+.auth-brand-name {
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   7. FORM INTRO
+   ========================================================= */
+
+.auth-form-intro {
+    margin-bottom: 30px;
+}
+
+.auth-form-intro .auth-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #16a34a;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.7px;
+}
+
+.auth-form-intro h1 {
+    margin-bottom: 10px;
+
+    color: #0f172a;
+
+    font-size: 34px;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.7px;
+}
+
+.auth-form-intro p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   8. FORM
+   ========================================================= */
+
+.auth-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.form-label {
+    color: #172033;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.form-input {
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 15px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #0f172a;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-input::placeholder {
+    color: #94a3b8;
+}
+
+.form-input:focus {
+    border-color: #16a34a;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(22, 163, 74, 0.12);
+}
+
+
+/* =========================================================
+   9. PASSWORD ROW
+   ========================================================= */
+
+.password-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.password-row a {
+    color: #16a34a;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.password-row a:hover {
+    color: #166534;
+}
+
+
+/* =========================================================
+   10. LOGIN BUTTON
+   ========================================================= */
+
+.auth-submit {
+    width: 100%;
+
+    min-height: 50px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #16a34a;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.auth-submit:hover {
+    background: #166534;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(22, 101, 52, 0.18);
+}
+
+.auth-submit:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   11. ALERT
+   ========================================================= */
+
+.auth-alert {
+    padding: 12px 14px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+.auth-alert.error {
+    border: 1px solid #fecaca;
+
+    background: #fef2f2;
+
+    color: #b91c1c;
+}
+
+.auth-alert.success {
+    border: 1px solid #bbf7d0;
+
+    background: #f0fdf4;
+
+    color: #166534;
+}
+
+
+/* =========================================================
+   12. AUTH FOOTER NOTE
+   ========================================================= */
+
+.auth-note {
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #e2e8f0;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   13. RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .auth-container {
+        grid-template-columns: 1fr;
+
+        max-width: 520px;
+
+        min-height: auto;
+    }
+
+    .auth-visual {
+        min-height: 260px;
+    }
+
+    .auth-visual-content {
+        left: 30px;
+
+        right: 30px;
+
+        bottom: 30px;
+    }
+
+    .auth-visual-content h2 {
+        font-size: 30px;
+    }
+
+    .auth-form-section {
+        padding: 45px 35px;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    .auth-page {
+        padding: 15px;
+    }
+
+    .auth-container {
+        border-radius: 16px;
+    }
+
+    .auth-visual {
+        min-height: 220px;
+    }
+
+    .auth-visual-content {
+        left: 22px;
+
+        right: 22px;
+
+        bottom: 22px;
+    }
+
+    .auth-visual-content h2 {
+        font-size: 25px;
+    }
+
+    .auth-visual-content p {
+        display: none;
+    }
+
+    .auth-form-section {
+        padding: 35px 22px;
+    }
+
+    .auth-form-intro h1 {
+        font-size: 29px;
+    }
+}

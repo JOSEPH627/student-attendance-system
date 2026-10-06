@@ -1,0 +1,1746 @@
+/* =========================================================
+   STUDENT ATTENDANCE SYSTEM
+   ADMIN FORM UI
+   Works with add-student.php structure
+   ========================================================= */
+
+
+/* =========================================================
+   FORM PANEL
+   ========================================================= */
+
+.dashboard-form {
+    width: 100%;
+    margin: 0;
+    padding: 24px;
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   TABLE PANEL USED BY FORM
+   ========================================================= */
+
+.table-panel {
+    width: 100%;
+    overflow: hidden;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+
+/* =========================================================
+   FORM PANEL HEADER
+   ========================================================= */
+
+.table-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 24px;
+
+    border-bottom: 1px solid #e8edf3;
+
+    background: #ffffff;
+}
+
+.table-panel-header .page-header-label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #16a34a;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+}
+
+.table-panel-header h2 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   FORM GRID
+   ========================================================= */
+
+.dashboard-form .form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   THREE COLUMN GRID
+   ========================================================= */
+
+.dashboard-form .form-grid:nth-of-type(3) {
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+}
+
+
+/* =========================================================
+   FORM GROUP
+   ========================================================= */
+
+.dashboard-form .form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    min-width: 0;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   FORM LABEL
+   ========================================================= */
+
+.dashboard-form .form-group label {
+    display: block;
+
+    margin: 0;
+
+    color: #334155;
+
+    font-size: 11px;
+
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.dashboard-form .form-input {
+    width: 100%;
+
+    height: 42px;
+
+    padding: 0 12px;
+
+    border: 1px solid #d7e0e9;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #1e293b;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* =========================================================
+   INPUT PLACEHOLDER
+   ========================================================= */
+
+.dashboard-form .form-input::placeholder {
+    color: #a0aec0;
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+   ========================================================= */
+
+.dashboard-form .form-input:focus {
+    border-color: #16a34a;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 163, 74, 0.09);
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   READONLY STUDENT REFERENCE
+   ========================================================= */
+
+.dashboard-form .form-input[readonly] {
+    background: #f8fafc;
+
+    color: #64748b;
+
+    border-color: #e2e8f0;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   SELECT
+   ========================================================= */
+
+.dashboard-form select.form-input {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   DATE INPUT
+   ========================================================= */
+
+.dashboard-form input[type="date"].form-input {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   FILE INPUT
+   ========================================================= */
+
+.dashboard-form input[type="file"].form-input {
+    height: auto;
+
+    min-height: 44px;
+
+    padding: 9px 11px;
+
+    background: #f8fafc;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   FILE INPUT HOVER
+   ========================================================= */
+
+.dashboard-form input[type="file"].form-input:hover {
+    border-color: #cbd5e1;
+
+    background: #f1f5f9;
+}
+
+
+/* =========================================================
+   SMALL HELP TEXT
+   ========================================================= */
+
+.dashboard-form .form-group small {
+    display: block;
+
+    margin: 0;
+
+    color: #94a3b8;
+
+    font-size: 10px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+   ========================================================= */
+
+.dashboard-form .form-actions {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 9px;
+
+    margin-top: 8px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #edf2f7;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.dashboard-form .dashboard-primary-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 38px;
+
+    padding: 0 17px;
+
+    border: 1px solid #15803d;
+
+    border-radius: 8px;
+
+    background: #16a34a;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 750;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.dashboard-form .dashboard-primary-button:hover {
+    background: #15803d;
+
+    border-color: #15803d;
+
+    box-shadow:
+        0 3px 8px rgba(22, 163, 74, 0.16);
+}
+
+.dashboard-form .dashboard-primary-button:active {
+    transform: translateY(1px);
+}
+
+
+/* =========================================================
+   DISABLED PRIMARY BUTTON
+   ========================================================= */
+
+.dashboard-form .dashboard-primary-button:disabled {
+    background: #94a3b8;
+
+    border-color: #94a3b8;
+
+    box-shadow: none;
+
+    cursor: not-allowed;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+   ========================================================= */
+
+.dashboard-form .dashboard-secondary-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 38px;
+
+    padding: 0 15px;
+
+    border: 1px solid #d7e0e9;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #475569;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.dashboard-form .dashboard-secondary-button:hover {
+    background: #f8fafc;
+
+    border-color: #cbd5e1;
+
+    color: #1e293b;
+}
+
+
+/* =========================================================
+   ERROR / WARNING MESSAGE
+   ========================================================= */
+
+.table-message.error {
+    margin-bottom: 18px;
+
+    padding: 12px 15px;
+
+    border: 1px solid #fecaca;
+
+    border-radius: 9px;
+
+    background: #fef2f2;
+
+    color: #b91c1c;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   ERROR MESSAGE BUTTON
+   ========================================================= */
+
+.table-message.error .dashboard-secondary-button {
+    margin-top: 2px;
+}
+
+
+/* =========================================================
+   PAGE HEADER IMPROVEMENT
+   ========================================================= */
+
+.dashboard-content > .page-header {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 18px;
+}
+
+.dashboard-content > .page-header .page-header-label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #16a34a;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+}
+
+.dashboard-content > .page-header h1 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+.dashboard-content > .page-header p {
+    margin: 6px 0 0;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   PAGE HEADER BACK BUTTON
+   ========================================================= */
+
+.page-header-actions .dashboard-secondary-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 36px;
+
+    padding: 0 14px;
+
+    border: 1px solid #dbe3ec;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #475569;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.page-header-actions .dashboard-secondary-button:hover {
+    background: #f8fafc;
+
+    border-color: #cbd5e1;
+
+    color: #1e293b;
+}
+
+
+/* =========================================================
+   FORM SECTIONS
+   ========================================================= */
+
+.dashboard-form > .form-grid + .form-grid {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   FORM FIELD SPACING
+   ========================================================= */
+
+.dashboard-form > .form-group {
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   FORM INPUT VALIDATION
+   ========================================================= */
+
+.dashboard-form .form-input:invalid:not(:placeholder-shown) {
+    border-color: #d7e0e9;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.dashboard-form .form-input:focus-visible,
+.dashboard-form .dashboard-primary-button:focus-visible,
+.dashboard-form .dashboard-secondary-button:focus-visible {
+    outline: 3px solid rgba(22, 163, 74, 0.13);
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .dashboard-content > .page-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .page-header-actions {
+        width: 100%;
+    }
+
+    .page-header-actions .dashboard-secondary-button {
+        width: auto;
+    }
+
+    .dashboard-form .form-grid,
+    .dashboard-form .form-grid:nth-of-type(3) {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+
+        margin-bottom: 16px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .table-panel {
+        border-radius: 10px;
+    }
+
+    .table-panel-header {
+        padding: 16px;
+    }
+
+    .dashboard-form {
+        padding: 16px;
+    }
+
+    .table-panel-header h2 {
+        font-size: 15px;
+    }
+
+    .dashboard-content > .page-header h1 {
+        font-size: 21px;
+    }
+
+    .dashboard-content > .page-header p {
+        font-size: 11px;
+    }
+
+    .page-header-actions,
+    .page-header-actions .dashboard-secondary-button {
+        width: 100%;
+    }
+
+    .dashboard-form .form-input {
+        height: 40px;
+
+        font-size: 11px;
+    }
+
+    .dashboard-form input[type="file"].form-input {
+        min-height: 42px;
+    }
+
+    .dashboard-form .form-actions {
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+
+        gap: 8px;
+    }
+
+    .dashboard-form .dashboard-primary-button,
+    .dashboard-form .dashboard-secondary-button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .dashboard-form {
+        padding: 13px;
+    }
+
+    .table-panel-header {
+        padding: 14px;
+    }
+
+    .dashboard-content > .page-header h1 {
+        font-size: 19px;
+    }
+
+}
+
+/* =========================================================
+   ADD STUDENT FORM - FORCE UI TEST
+   ========================================================= */
+
+.dashboard-content .table-panel {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 14px !important;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06) !important;
+    overflow: hidden !important;
+}
+
+.dashboard-content .table-panel-header {
+    padding: 22px 26px !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #e8edf3 !important;
+}
+
+.dashboard-content form.dashboard-form {
+    padding: 26px !important;
+    background: #ffffff !important;
+}
+
+.dashboard-content form.dashboard-form .form-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+    margin-bottom: 20px !important;
+}
+
+.dashboard-content form.dashboard-form .form-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 7px !important;
+    margin: 0 0 18px 0 !important;
+}
+
+.dashboard-content form.dashboard-form .form-group label {
+    color: #334155 !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+}
+
+.dashboard-content form.dashboard-form .form-input {
+    width: 100% !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    padding: 0 13px !important;
+
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 9px !important;
+
+    background: #ffffff !important;
+    color: #1e293b !important;
+
+    font-size: 12px !important;
+    box-sizing: border-box !important;
+}
+
+.dashboard-content form.dashboard-form .form-input:focus {
+    border-color: #16a34a !important;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 163, 74, 0.10) !important;
+
+    outline: none !important;
+}
+
+.dashboard-content form.dashboard-form .form-input[readonly] {
+    background: #f8fafc !important;
+    color: #64748b !important;
+}
+
+.dashboard-content form.dashboard-form small {
+    color: #94a3b8 !important;
+    font-size: 10px !important;
+}
+
+.dashboard-content form.dashboard-form .form-actions {
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 10px !important;
+
+    padding-top: 22px !important;
+    margin-top: 5px !important;
+
+    border-top: 1px solid #e2e8f0 !important;
+}
+
+.dashboard-content form.dashboard-form .dashboard-primary-button {
+    min-height: 40px !important;
+    padding: 0 18px !important;
+
+    border-radius: 8px !important;
+    border: 1px solid #15803d !important;
+
+    background: #16a34a !important;
+    color: #ffffff !important;
+
+    font-size: 11px !important;
+    font-weight: 700 !important;
+}
+
+.dashboard-content form.dashboard-form .dashboard-secondary-button {
+    min-height: 40px !important;
+    padding: 0 17px !important;
+
+    border-radius: 8px !important;
+    border: 1px solid #cbd5e1 !important;
+
+    background: #ffffff !important;
+    color: #475569 !important;
+
+    font-size: 11px !important;
+    font-weight: 700 !important;
+}
+
+@media (max-width: 800px) {
+
+    .dashboard-content form.dashboard-form .form-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .dashboard-content form.dashboard-form {
+        padding: 17px !important;
+    }
+
+    .dashboard-content form.dashboard-form .form-actions {
+        flex-direction: column-reverse !important;
+    }
+
+    .dashboard-content form.dashboard-form
+    .dashboard-primary-button,
+    .dashboard-content form.dashboard-form
+    .dashboard-secondary-button {
+        width: 100% !important;
+    }
+
+}
+
+/* =========================================================
+   ADMIN ATTENDANCE
+   FINAL FORM + PAGE UI OVERRIDE
+   ========================================================= */
+
+
+/* =========================================================
+   ATTENDANCE PAGE BASE
+   ========================================================= */
+
+.dashboard-content .attendance-page-header {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+
+    width: 100% !important;
+
+    margin: 0 0 20px 0 !important;
+    padding: 0 !important;
+}
+
+.dashboard-content .attendance-page-header h1 {
+    margin: 4px 0 5px 0 !important;
+
+    color: #0f172a !important;
+
+    font-size: 25px !important;
+    line-height: 1.2 !important;
+    font-weight: 750 !important;
+}
+
+.dashboard-content .attendance-page-header p {
+    margin: 0 !important;
+
+    color: #64748b !important;
+
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+}
+
+
+/* =========================================================
+   ALERTS
+   ========================================================= */
+
+.dashboard-content .attendance-page-header + .alert,
+.dashboard-content .alert {
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    margin: 0 0 16px 0 !important;
+    padding: 11px 14px !important;
+
+    border-radius: 8px !important;
+
+    font-size: 10px !important;
+    line-height: 1.4 !important;
+}
+
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.dashboard-content .attendance-summary-grid {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr)) !important;
+
+    gap: 12px !important;
+
+    width: 100% !important;
+
+    margin: 0 0 18px 0 !important;
+    padding: 0 !important;
+}
+
+.dashboard-content .attendance-summary-card {
+    display: flex !important;
+
+    align-items: center !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 72px !important;
+
+    box-sizing: border-box !important;
+
+    margin: 0 !important;
+    padding: 13px 15px !important;
+
+    border: 1px solid #e5e7eb !important;
+    border-radius: 10px !important;
+
+    background: #ffffff !important;
+
+    box-shadow:
+        0 2px 7px rgba(15, 23, 42, 0.035) !important;
+}
+
+.dashboard-content .attendance-summary-icon {
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 34px !important;
+    height: 34px !important;
+
+    min-width: 34px !important;
+    min-height: 34px !important;
+
+    margin: 0 11px 0 0 !important;
+    padding: 0 !important;
+
+    border-radius: 8px !important;
+
+    font-size: 14px !important;
+    font-weight: 800 !important;
+}
+
+.dashboard-content .attendance-summary-card > div:last-child {
+    min-width: 0 !important;
+}
+
+.dashboard-content .attendance-summary-label {
+    display: block !important;
+
+    margin: 0 0 3px 0 !important;
+
+    color: #64748b !important;
+
+    font-size: 9px !important;
+    line-height: 1.2 !important;
+
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+}
+
+.dashboard-content .attendance-summary-card strong {
+    display: block !important;
+
+    margin: 0 !important;
+
+    color: #0f172a !important;
+
+    font-size: 19px !important;
+    line-height: 1.1 !important;
+    font-weight: 800 !important;
+}
+
+.dashboard-content .attendance-summary-card
+.attendance-summary-icon {
+    background: #f1f5f9 !important;
+    color: #475569 !important;
+}
+
+.dashboard-content .attendance-summary-present
+.attendance-summary-icon {
+    background: #ecfdf3 !important;
+    color: #15803d !important;
+}
+
+.dashboard-content .attendance-summary-absent
+.attendance-summary-icon {
+    background: #fef2f2 !important;
+    color: #dc2626 !important;
+}
+
+.dashboard-content .attendance-summary-permission
+.attendance-summary-icon {
+    background: #fff7ed !important;
+    color: #c2410c !important;
+}
+
+
+/* =========================================================
+   MAIN ATTENDANCE CARDS
+   ========================================================= */
+
+.dashboard-content .attendance-form-card,
+.dashboard-content .attendance-filter-card,
+.dashboard-content .attendance-table-card {
+    display: block !important;
+
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    margin: 0 0 18px 0 !important;
+    padding: 0 !important;
+
+    border: 1px solid #e5e7eb !important;
+    border-radius: 10px !important;
+
+    background: #ffffff !important;
+
+    box-shadow:
+        0 2px 8px rgba(15, 23, 42, 0.035) !important;
+
+    overflow: hidden !important;
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.dashboard-content .attendance-section-header {
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    margin: 0 !important;
+    padding: 17px 20px !important;
+
+    border: 0 !important;
+    border-bottom: 1px solid #edf1f5 !important;
+
+    background: #ffffff !important;
+}
+
+.dashboard-content .attendance-section-header > div {
+    min-width: 0 !important;
+}
+
+.dashboard-content .attendance-section-label {
+    display: block !important;
+
+    margin: 0 0 4px 0 !important;
+
+    color: #16a34a !important;
+
+    font-size: 9px !important;
+    line-height: 1.2 !important;
+
+    font-weight: 800 !important;
+
+    letter-spacing: 0.08em !important;
+}
+
+.dashboard-content .attendance-section-header h2 {
+    margin: 0 !important;
+
+    color: #0f172a !important;
+
+    font-size: 15px !important;
+    line-height: 1.3 !important;
+
+    font-weight: 750 !important;
+}
+
+.dashboard-content .attendance-section-header p {
+    margin: 4px 0 0 0 !important;
+
+    color: #64748b !important;
+
+    font-size: 10px !important;
+    line-height: 1.5 !important;
+}
+
+
+/* =========================================================
+   RECORD ATTENDANCE FORM
+   ========================================================= */
+
+.dashboard-content form#attendance-form {
+    display: block !important;
+
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    margin: 0 !important;
+    padding: 20px !important;
+
+    background: #ffffff !important;
+}
+
+
+/* FORM GRID */
+
+.dashboard-content form#attendance-form
+.attendance-form-grid {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+    column-gap: 18px !important;
+    row-gap: 16px !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* FORM GROUP */
+
+.dashboard-content form#attendance-form
+.attendance-form-grid .form-group {
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* LABEL */
+
+.dashboard-content form#attendance-form
+.form-group > label {
+    display: block !important;
+
+    width: 100% !important;
+
+    margin: 0 0 6px 0 !important;
+    padding: 0 !important;
+
+    color: #334155 !important;
+
+    font-size: 10px !important;
+    line-height: 1.3 !important;
+
+    font-weight: 750 !important;
+}
+
+
+/* INPUTS */
+
+.dashboard-content form#attendance-form
+.form-group > input,
+.dashboard-content form#attendance-form
+.form-group > select {
+    display: block !important;
+
+    width: 100% !important;
+    height: 40px !important;
+    min-height: 40px !important;
+
+    box-sizing: border-box !important;
+
+    margin: 0 !important;
+    padding: 0 12px !important;
+
+    border: 1px solid #d9e1ea !important;
+    border-radius: 8px !important;
+
+    outline: none !important;
+
+    background: #ffffff !important;
+
+    color: #1e293b !important;
+
+    font-family: inherit !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+
+    box-shadow: none !important;
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease !important;
+}
+
+
+/* SELECT */
+
+.dashboard-content form#attendance-form
+.form-group > select {
+    cursor: pointer !important;
+}
+
+
+/* FOCUS */
+
+.dashboard-content form#attendance-form
+.form-group > input:focus,
+.dashboard-content form#attendance-form
+.form-group > select:focus {
+    border-color: #16a34a !important;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 163, 74, 0.08) !important;
+}
+
+
+/* DATE */
+
+.dashboard-content form#attendance-form
+input[type="date"] {
+    color: #334155 !important;
+}
+
+
+/* =========================================================
+   PERMISSION REASON
+   ========================================================= */
+
+.dashboard-content form#attendance-form
+#permission-reason-group {
+    display: flex;
+
+    flex-direction: column !important;
+
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    margin: 16px 0 0 0 !important;
+    padding: 13px !important;
+
+    border: 1px solid #fed7aa !important;
+    border-radius: 8px !important;
+
+    background: #fffaf5 !important;
+}
+
+.dashboard-content form#attendance-form
+#permission-reason-group label {
+    margin-bottom: 6px !important;
+
+    color: #9a3412 !important;
+}
+
+.dashboard-content form#attendance-form
+#permission-reason-group textarea {
+    display: block !important;
+
+    width: 100% !important;
+    min-height: 78px !important;
+
+    box-sizing: border-box !important;
+
+    margin: 0 !important;
+    padding: 10px 11px !important;
+
+    border: 1px solid #e5c7aa !important;
+    border-radius: 7px !important;
+
+    background: #ffffff !important;
+
+    color: #334155 !important;
+
+    font-family: inherit !important;
+    font-size: 11px !important;
+
+    resize: vertical !important;
+    outline: none !important;
+}
+
+.dashboard-content form#attendance-form
+#permission-reason-group textarea:focus {
+    border-color: #ea580c !important;
+
+    box-shadow:
+        0 0 0 3px rgba(234, 88, 12, 0.08) !important;
+}
+
+.dashboard-content form#attendance-form
+.form-help-text {
+    display: block !important;
+
+    margin: 5px 0 0 0 !important;
+
+    color: #a16207 !important;
+
+    font-size: 9px !important;
+    line-height: 1.4 !important;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+   ========================================================= */
+
+.dashboard-content form#attendance-form
+.attendance-form-actions {
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: flex-end !important;
+
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    gap: 8px !important;
+
+    margin: 20px 0 0 0 !important;
+    padding: 16px 0 0 0 !important;
+
+    border: 0 !important;
+    border-top: 1px solid #edf1f5 !important;
+}
+
+.dashboard-content form#attendance-form
+.attendance-form-actions
+.dashboard-primary-button,
+.dashboard-content form#attendance-form
+.attendance-form-actions
+.dashboard-secondary-button {
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: auto !important;
+    min-width: 125px !important;
+    height: 38px !important;
+    min-height: 38px !important;
+
+    box-sizing: border-box !important;
+
+    margin: 0 !important;
+    padding: 0 15px !important;
+
+    border-radius: 7px !important;
+
+    font-family: inherit !important;
+    font-size: 10px !important;
+    font-weight: 750 !important;
+
+    text-decoration: none !important;
+
+    cursor: pointer !important;
+}
+
+
+/* =========================================================
+   FILTER CARD
+   ========================================================= */
+
+.dashboard-content .attendance-filter-card
+.attendance-filter-form {
+    display: block !important;
+
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    margin: 0 !important;
+    padding: 18px 20px !important;
+
+    background: #ffffff !important;
+}
+
+
+/* FILTER GRID */
+
+.dashboard-content .attendance-filter-grid {
+    display: grid !important;
+
+    grid-template-columns:
+        150px
+        repeat(4, minmax(0, 1fr)) !important;
+
+    gap: 12px !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    align-items: end !important;
+}
+
+
+/* FILTER GROUP */
+
+.dashboard-content .attendance-filter-grid .form-group {
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* FILTER LABEL */
+
+.dashboard-content .attendance-filter-grid
+.form-group > label {
+    display: block !important;
+
+    margin: 0 0 6px 0 !important;
+
+    color: #475569 !important;
+
+    font-size: 9px !important;
+    font-weight: 750 !important;
+}
+
+
+/* FILTER INPUT */
+
+.dashboard-content .attendance-filter-grid
+.form-group > input,
+.dashboard-content .attendance-filter-grid
+.form-group > select {
+    display: block !important;
+
+    width: 100% !important;
+    height: 38px !important;
+    min-height: 38px !important;
+
+    box-sizing: border-box !important;
+
+    margin: 0 !important;
+    padding: 0 10px !important;
+
+    border: 1px solid #d9e1ea !important;
+    border-radius: 7px !important;
+
+    background: #ffffff !important;
+
+    color: #334155 !important;
+
+    font-family: inherit !important;
+    font-size: 10px !important;
+
+    outline: none !important;
+}
+
+.dashboard-content .attendance-filter-grid
+.form-group > input:focus,
+.dashboard-content .attendance-filter-grid
+.form-group > select:focus {
+    border-color: #16a34a !important;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 163, 74, 0.08) !important;
+}
+
+
+/* FILTER ACTIONS */
+
+.dashboard-content .attendance-filter-actions {
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: flex-end !important;
+
+    gap: 8px !important;
+
+    width: 100% !important;
+
+    margin: 14px 0 0 0 !important;
+    padding: 0 !important;
+}
+
+.dashboard-content .attendance-filter-actions
+.dashboard-primary-button,
+.dashboard-content .attendance-filter-actions
+.dashboard-secondary-button {
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: auto !important;
+    min-width: 105px !important;
+    height: 36px !important;
+
+    box-sizing: border-box !important;
+
+    margin: 0 !important;
+    padding: 0 13px !important;
+
+    border-radius: 7px !important;
+
+    font-size: 10px !important;
+    font-weight: 750 !important;
+
+    text-decoration: none !important;
+}
+
+
+/* =========================================================
+   RECORD COUNT
+   ========================================================= */
+
+.dashboard-content .attendance-record-count {
+    display: flex !important;
+
+    align-items: baseline !important;
+
+    gap: 5px !important;
+
+    margin: 0 !important;
+}
+
+.dashboard-content .attendance-record-count strong {
+    color: #0f172a !important;
+
+    font-size: 17px !important;
+    font-weight: 800 !important;
+}
+
+.dashboard-content .attendance-record-count span {
+    color: #64748b !important;
+
+    font-size: 9px !important;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.dashboard-content .attendance-table-heading {
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    margin: 0 !important;
+    padding: 17px 20px !important;
+
+    border-bottom: 1px solid #edf1f5 !important;
+}
+
+.dashboard-content .attendance-table-heading h2 {
+    margin: 4px 0 0 0 !important;
+
+    color: #0f172a !important;
+
+    font-size: 15px !important;
+    font-weight: 750 !important;
+}
+
+.dashboard-content .attendance-table-wrapper {
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow-x: auto !important;
+}
+
+.dashboard-content .attendance-data-table {
+    width: 100% !important;
+
+    min-width: 1050px !important;
+
+    margin: 0 !important;
+
+    border-collapse: collapse !important;
+}
+
+.dashboard-content .attendance-data-table th {
+    height: 38px !important;
+
+    padding: 0 12px !important;
+
+    background: #f8fafc !important;
+
+    border-bottom: 1px solid #e5e7eb !important;
+
+    color: #64748b !important;
+
+    font-size: 9px !important;
+    font-weight: 800 !important;
+
+    text-align: left !important;
+
+    white-space: nowrap !important;
+}
+
+.dashboard-content .attendance-data-table td {
+    padding: 11px 12px !important;
+
+    border-bottom: 1px solid #eef2f7 !important;
+
+    color: #334155 !important;
+
+    font-size: 10px !important;
+
+    vertical-align: middle !important;
+}
+
+.dashboard-content .attendance-data-table tbody tr:hover {
+    background: #fafdfb !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .dashboard-content .attendance-summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .dashboard-content form#attendance-form
+    .attendance-form-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .dashboard-content .attendance-filter-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr)) !important;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .dashboard-content .attendance-filter-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .dashboard-content .attendance-summary-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .dashboard-content form#attendance-form
+    .attendance-form-grid {
+        grid-template-columns: 1fr !important;
+
+        gap: 14px !important;
+    }
+
+    .dashboard-content .attendance-section-header,
+    .dashboard-content .attendance-table-heading {
+        padding: 14px 15px !important;
+    }
+
+    .dashboard-content form#attendance-form {
+        padding: 15px !important;
+    }
+
+    .dashboard-content .attendance-filter-card
+    .attendance-filter-form {
+        padding: 15px !important;
+    }
+
+    .dashboard-content .attendance-filter-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .dashboard-content .attendance-filter-actions {
+        flex-direction: column !important;
+
+        align-items: stretch !important;
+    }
+
+    .dashboard-content .attendance-filter-actions
+    .dashboard-primary-button,
+    .dashboard-content .attendance-filter-actions
+    .dashboard-secondary-button {
+        width: 100% !important;
+    }
+
+    .dashboard-content form#attendance-form
+    .attendance-form-actions {
+        flex-direction: column !important;
+
+        align-items: stretch !important;
+    }
+
+    .dashboard-content form#attendance-form
+    .attendance-form-actions
+    .dashboard-primary-button,
+    .dashboard-content form#attendance-form
+    .attendance-form-actions
+    .dashboard-secondary-button {
+        width: 100% !important;
+    }
+
+}
